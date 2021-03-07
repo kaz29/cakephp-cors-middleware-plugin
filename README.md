@@ -56,25 +56,25 @@ When injecting with environment variables, it looks like this...
                 'https://example.com', // your web site urls
                 'https://app.example.com',
             ],
+            'allowMethods' => [
+                'GET',
+                'POST',
+                'HEAD',
+                'OPTIONS',
+                'PUT',
+                'DELETE',
+            ],
+            'allowHeaders' => [
+                'Accept-Language',
+                'content-type',
+                'Accept',
+                'Origin',
+                'Cookie',
+                'Content-Length',
+                'Authorization',
+            ],
+            'exposeHeaders' => [],
         ],
-        'allowMethods' => [
-            'GET',
-            'POST',
-            'HEAD',
-            'OPTIONS',
-            'PUT',
-            'DELETE',
-        ],
-        'allowHeaders' => [
-            'Accept-Language',
-            'content-type',
-            'Accept',
-            'Origin',
-            'Cookie',
-            'Content-Length',
-            'Authorization',
-        ],
-        'exposeHeaders' => [],
     ],
 ```
 
