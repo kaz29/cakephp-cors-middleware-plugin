@@ -31,6 +31,7 @@ class CorsMiddleware implements MiddlewareInterface
             'Content-Length',
             'Authorization',
         ],
+        'maxAge' => null,
         'exposeHeaders' => [],
     ];
 
@@ -92,6 +93,11 @@ class CorsMiddleware implements MiddlewareInterface
         if (is_array($this->config['exposeHeaders'])) {
             $response = $response
                 ->withHeader('Access-Control-Expose-Headers', implode(',', $this->config['exposeHeaders']));
+        }
+
+        if ($this->config['maxAge'] !== null) {
+            $response = $response
+                ->withHeader('Access-Control-Max-Age', $this->config['maxAge']);
         }
 
         return $response;
