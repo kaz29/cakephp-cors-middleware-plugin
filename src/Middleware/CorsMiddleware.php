@@ -73,8 +73,14 @@ class CorsMiddleware implements MiddlewareInterface
 
         foreach ($origin as $url) {
             foreach ($this->config['allowUrls'] as $allow_url) {
-                if ($url === $allow_url) {
-                    return $allow_url;
+                if (substr($allow_url, 0, 1) === '/') {
+                    if (preg_match($allow_url, $url) === 1) {
+                        return $url;
+                    }
+                } else {
+                    if ($url === $allow_url) {
+                        return $allow_url;
+                    }
                 }
             }
         }
