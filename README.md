@@ -55,6 +55,7 @@ When injecting with environment variables, it looks like this...
             'allowUrls' => [
                 'https://example.com', // your web site urls
                 'https://app.example.com',
+                '/^http:\/\/localhost:(\d+)$/', // regular expression support
             ],
             'allowMethods' => [
                 'GET',
