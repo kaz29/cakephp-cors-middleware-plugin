@@ -6,3 +6,8 @@
 /config/Migrations/schema-dump-default.lock
 /vendor/
 /.idea/
+/app
+/config
+/docker-compose.yml
+/Dockerfile
+/Makefile
